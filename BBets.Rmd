@@ -1,7 +1,7 @@
 ---
 title: "Brownlows Bets"
 author: "Kaylie Fagoaga"
-output: "Summer 2024"
+output: 
   html_document:
     number_sections: true
     toc: true
@@ -50,7 +50,8 @@ bank = vector("numeric")
 for (i in 1:100) {
   bank[i] = BrLw(35, 2, 637)
 }
-print(meanbank)
+
+print(mean(bank))
 hist(bank)
 ```
 
