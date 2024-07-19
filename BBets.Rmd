@@ -46,28 +46,39 @@ The function will be given a class_size by number of students, odds, and Number_
 Assume we do this bet 40 times
 ```{r}
 bank = vector('numeric')
-for (i in 1:100) { bank [i] = BrLw(35,2,637)
+for (i in 1:100) { 
+  bank [i] = BrLw(35,2,637)
 }
 print(mean(bank))
 hist(bank)
 ```
 
-average profit = $285
+average profit = $283
+
+```{r}
+varbanks= var(bank)
+lci= mean(bank)-sqrt(var(bank))*1.96 
+uci= mean(bank)+sqrt(var(bank))*1.96 
+print (lci)
+print(uci)
+```
+
 
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
 ```{r}
-bank = vector("numeric")
-for (i in 1:100) {
-  bank[i] = BrLw(35, 4.5, 637)
+bank = vector('numeric')
+for (i in 1:100){
+  bank[i]= BrLw(35,4.5, 637)
 }
-meanbank =mean(bank)
-print(mean(bank))
+meanbank= mean(bank)
+print(meanbank)
 hist(bank)
-lci = mean(bank) - sqrt(var(bank))*1.96
-uci = mean(bank) + sqrt(var(bank))*1.96
-print(lci)
-print(uci) 
+lci= mean(bank)-sqrt(var(bank))*1.96 
+uci= mean(bank)+sqrt(var(bank))*1.96 
+print (lci)
+print(uci)
+
 ```
 
 The amount of money Dr. J has to pay would be $4.50.   
@@ -104,8 +115,8 @@ print(uci)
 
 
 # Discussion and Conclusion
-The fair odds for a bet on matching birthdays in a 35 person class is about $4.50 to make the odds even.   
-The size class is a 2:1 odds bet fair would be about 28 or 29 students.     
+The fair odds for a bet on matching for a class of 35 people is about $4.50 to make the odds even.   
+The size class would be 28 or 29 students at a fair 2:1 odds bet.  
 The amount of money would Brownlow be expected to end up with if the bets went as described would be about $228.   
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
